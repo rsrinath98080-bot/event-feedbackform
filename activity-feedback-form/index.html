@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b70">
+  <title>Activity Feedback Form | Excel Engineering College</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="college-header">
+      <div class="college-header__inner">
+      <div class="college-identity">
+        <p class="college-name">EXCEL ENGINEERING COLLEGE</p>
+        <p class="college-autonomous">(Autonomous)</p>
+        <p>Approved by AICTE, New Delhi &amp; Affiliated to Anna University, Chennai</p>
+        <p>Accredited by NBA (Aero, Agri, BME, Civil, CSE, ECE, Mech.), NAAC with &ldquo;A+&rdquo; and Recognised by UGC (2f &amp; 12B)</p>
+        <p>Komarapalayam - 637303</p>
+      </div>
+      
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <div class="page-title">
+      <p class="eyebrow">EXCEL ENGINEERING COLLEGE</p>
+      <h1>Activity Feedback Form</h1>
+    </div>
+
+    <div id="submissionError" class="submission-error" role="alert" aria-live="assertive" hidden>
+    </div>
+
+    <form id="feedbackForm" novalidate>
+      <section class="form-section" aria-labelledby="activityDetailsHeading">
+        <div class="section-heading">
+          <span class="section-index" aria-hidden="true">01</span>
+          <div>
+            <h2 id="activityDetailsHeading">Activity Details</h2>
+            <p>Complete the activity and participant information.</p>
+          </div>
+        </div>
+
+        <div class="details-grid">
+          <div class="form-field">
+            <label for="studentName">Student Name <span aria-hidden="true">*</span></label>
+            <input id="studentName" name="studentName" type="text" autocomplete="name" required aria-describedby="studentNameError">
+            <span class="field-error" id="studentNameError" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="year">Year <span aria-hidden="true">*</span></label>
+            <select id="year" name="year" required aria-describedby="yearError selectedYearDisplay">
+              <option value="" selected disabled>Select Year</option>
+              <option value="I Year">I Year</option>
+              <option value="II Year">II Year</option>
+              <option value="III Year">III Year</option>
+              <option value="IV Year">IV Year</option>
+            </select>
+            <span class="field-error" id="yearError" aria-live="polite"></span>
+            <p id="selectedYearDisplay" class="selected-field-value" aria-live="polite" hidden>Selected Year: <span id="selectedYearValue"></span></p>
+          </div>
+          <div class="form-field">
+            <label for="semester">Semester <span aria-hidden="true">*</span></label>
+            <input id="semester" name="semester" type="text" required aria-describedby="semesterError">
+            <span class="field-error" id="semesterError" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="department">Department <span aria-hidden="true">*</span></label>
+            <input id="department" name="department" type="text" required aria-describedby="departmentError">
+            <span class="field-error" id="departmentError" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="collegeName">College Name <span aria-hidden="true">*</span></label>
+            <input id="collegeName" name="collegeName" type="text" required aria-describedby="collegeNameError">
+            <span class="field-error" id="collegeNameError" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="emailError">
+            <span class="field-error" id="emailError" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="mobileNumber">Mobile Number <span aria-hidden="true">*</span></label>
+            <input id="mobileNumber" name="mobileNumber" type="tel" inputmode="numeric" autocomplete="tel" pattern="[6-9][0-9]{9}" maxlength="10" title="Enter a 10-digit Indian mobile number starting with 6, 7, 8, or 9." required aria-describedby="mobileNumberError">
+            <span class="field-error" id="mobileNumberError" aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section feedback-section" aria-labelledby="feedbackHeading">
+        <div class="section-heading">
+          <span class="section-index" aria-hidden="true">02</span>
+          <div>
+            <h2 id="feedbackHeading">Activity Feedback</h2>
+            <p>Choose one response for each question.</p>
+          </div>
+        </div>
+
+        <div class="instructions">
+          <p>Answer each question by selecting Yes or No.</p>
+        </div>
+        <p class="response-key">Provide the required details when prompted.</p>
+
+        <div class="questions-list">
+                              <fieldset class="question" aria-describedby="q1Error">
+            <legend><span class="question-number" aria-hidden="true">1</span><span>Does this Activity/Training improve your Technical Skill?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 1" aria-required="true">
+              <label class="choice"><input type="radio" name="q1" value="Yes" required aria-describedby="q1Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q1" value="No" required aria-describedby="q1Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="1" data-answer="No" hidden>
+              <label for="q1Reason">Please provide your reason</label>
+              <textarea id="q1Reason" name="q1Reason" rows="3" disabled aria-describedby="q1ReasonError"></textarea>
+              <span class="field-error" id="q1ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q1Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q2Error">
+            <legend><span class="question-number" aria-hidden="true">2</span><span>Does this Activity/Training improve your Problem Solving Skill?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 2" aria-required="true">
+              <label class="choice"><input type="radio" name="q2" value="Yes" required aria-describedby="q2Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q2" value="No" required aria-describedby="q2Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="2" data-answer="No" hidden>
+              <label for="q2Reason">Please provide your reason</label>
+              <textarea id="q2Reason" name="q2Reason" rows="3" disabled aria-describedby="q2ReasonError"></textarea>
+              <span class="field-error" id="q2ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q2Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q3Error">
+            <legend><span class="question-number" aria-hidden="true">3</span><span>Does this Activity/Training improve your practical Exposure?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 3" aria-required="true">
+              <label class="choice"><input type="radio" name="q3" value="Yes" required aria-describedby="q3Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q3" value="No" required aria-describedby="q3Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="3" data-answer="No" hidden>
+              <label for="q3Reason">Please provide your reason</label>
+              <textarea id="q3Reason" name="q3Reason" rows="3" disabled aria-describedby="q3ReasonError"></textarea>
+              <span class="field-error" id="q3ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q3Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q4Error">
+            <legend><span class="question-number" aria-hidden="true">4</span><span>Does this Activity/Training useful to apply for any modern research programs?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 4" aria-required="true">
+              <label class="choice"><input type="radio" name="q4" value="Yes" required aria-describedby="q4Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q4" value="No" required aria-describedby="q4Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="4" data-answer="No" hidden>
+              <label for="q4Reason">Please provide your reason</label>
+              <textarea id="q4Reason" name="q4Reason" rows="3" disabled aria-describedby="q4ReasonError"></textarea>
+              <span class="field-error" id="q4ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q4Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q5Error">
+            <legend><span class="question-number" aria-hidden="true">5</span><span>Have you learnt any modern tools through this Activity/Training?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 5" aria-required="true">
+              <label class="choice"><input type="radio" name="q5" value="Yes" required aria-describedby="q5Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q5" value="No" required aria-describedby="q5Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="5" data-answer="Yes" hidden>
+              <label for="q5ToolName">If yes name of tool</label>
+              <input id="q5ToolName" name="q5ToolName" type="text" disabled aria-describedby="q5ToolNameError">
+              <span class="field-error" id="q5ToolNameError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q5Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q6Error">
+            <legend><span class="question-number" aria-hidden="true">6</span><span>Have you got any ideas to improve our environmental &amp; social needs?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 6" aria-required="true">
+              <label class="choice"><input type="radio" name="q6" value="Yes" required aria-describedby="q6Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q6" value="No" required aria-describedby="q6Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="6" data-answer="No" hidden>
+              <label for="q6Reason">Please provide your reason</label>
+              <textarea id="q6Reason" name="q6Reason" rows="3" disabled aria-describedby="q6ReasonError"></textarea>
+              <span class="field-error" id="q6ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q6Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q7Error">
+            <legend><span class="question-number" aria-hidden="true">7</span><span>Does this Activity/Training improve your mind to face any changes in your life?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 7" aria-required="true">
+              <label class="choice"><input type="radio" name="q7" value="Yes" required aria-describedby="q7Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q7" value="No" required aria-describedby="q7Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="7" data-answer="No" hidden>
+              <label for="q7Reason">Please provide your reason</label>
+              <textarea id="q7Reason" name="q7Reason" rows="3" disabled aria-describedby="q7ReasonError"></textarea>
+              <span class="field-error" id="q7ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q7Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q8Error">
+            <legend><span class="question-number" aria-hidden="true">8</span><span>Does this Activity/Training useful to improve your professional ethics?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 8" aria-required="true">
+              <label class="choice"><input type="radio" name="q8" value="Yes" required aria-describedby="q8Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q8" value="No" required aria-describedby="q8Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="8" data-answer="No" hidden>
+              <label for="q8Reason">Please provide your reason</label>
+              <textarea id="q8Reason" name="q8Reason" rows="3" disabled aria-describedby="q8ReasonError"></textarea>
+              <span class="field-error" id="q8ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q8Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q9Error">
+            <legend><span class="question-number" aria-hidden="true">9</span><span>Does this Activity/Training useful for you to work in multi-disciplinary team?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 9" aria-required="true">
+              <label class="choice"><input type="radio" name="q9" value="Yes" required aria-describedby="q9Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q9" value="No" required aria-describedby="q9Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="9" data-answer="No" hidden>
+              <label for="q9Reason">Please provide your reason</label>
+              <textarea id="q9Reason" name="q9Reason" rows="3" disabled aria-describedby="q9ReasonError"></textarea>
+              <span class="field-error" id="q9ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q9Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q10Error">
+            <legend><span class="question-number" aria-hidden="true">10</span><span>Have you ever felt that your communication skill &amp; leadership skill has been improved through this activity?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 10" aria-required="true">
+              <label class="choice"><input type="radio" name="q10" value="Yes" required aria-describedby="q10Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q10" value="No" required aria-describedby="q10Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="10" data-answer="No" hidden>
+              <label for="q10Reason">Please provide your reason</label>
+              <textarea id="q10Reason" name="q10Reason" rows="3" disabled aria-describedby="q10ReasonError"></textarea>
+              <span class="field-error" id="q10ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q10Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q11Error">
+            <legend><span class="question-number" aria-hidden="true">11</span><span>Does this Activity/Training improve your skill on project management and finance?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 11" aria-required="true">
+              <label class="choice"><input type="radio" name="q11" value="Yes" required aria-describedby="q11Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q11" value="No" required aria-describedby="q11Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="11" data-answer="No" hidden>
+              <label for="q11Reason">Please provide your reason</label>
+              <textarea id="q11Reason" name="q11Reason" rows="3" disabled aria-describedby="q11ReasonError"></textarea>
+              <span class="field-error" id="q11ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q11Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q12Error">
+            <legend><span class="question-number" aria-hidden="true">12</span><span>Does this Activity/Training encourage you for life - long learning?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 12" aria-required="true">
+              <label class="choice"><input type="radio" name="q12" value="Yes" required aria-describedby="q12Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q12" value="No" required aria-describedby="q12Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="12" data-answer="No" hidden>
+              <label for="q12Reason">Please provide your reason</label>
+              <textarea id="q12Reason" name="q12Reason" rows="3" disabled aria-describedby="q12ReasonError"></textarea>
+              <span class="field-error" id="q12ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q12Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q13Error">
+            <legend><span class="question-number" aria-hidden="true">13</span><span>Does this Activity improve your skill for complex engineering Activities?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 13" aria-required="true">
+              <label class="choice"><input type="radio" name="q13" value="Yes" required aria-describedby="q13Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q13" value="No" required aria-describedby="q13Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="13" data-answer="No" hidden>
+              <label for="q13Reason">Please provide your reason</label>
+              <textarea id="q13Reason" name="q13Reason" rows="3" disabled aria-describedby="q13ReasonError"></textarea>
+              <span class="field-error" id="q13ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q13Error" aria-live="polite"></span>
+          </fieldset>
+
+                              <fieldset class="question" aria-describedby="q14Error">
+            <legend><span class="question-number" aria-hidden="true">14</span><span>Does this Activity useful for inculcating appropriate ethical / Risk management process?</span></legend>
+            <div class="yes-no-options" role="radiogroup" aria-label="Response to question 14" aria-required="true">
+              <label class="choice"><input type="radio" name="q14" value="Yes" required aria-describedby="q14Error"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="q14" value="No" required aria-describedby="q14Error"><span>No</span></label>
+            </div>
+            <div class="conditional-field" data-question="14" data-answer="No" hidden>
+              <label for="q14Reason">Please provide your reason</label>
+              <textarea id="q14Reason" name="q14Reason" rows="3" disabled aria-describedby="q14ReasonError"></textarea>
+              <span class="field-error" id="q14ReasonError" aria-live="polite"></span>
+            </div>
+            <span class="field-error question-error" id="q14Error" aria-live="polite"></span>
+          </fieldset>
+        </div>
+      </section>
+
+      <section class="form-section comments-section" aria-labelledby="commentsHeading">
+        <div class="section-heading">
+          <span class="section-index" aria-hidden="true">03</span>
+          <div>
+            <h2 id="commentsHeading">Any Other Comments:</h2>
+            <p>Share any additional feedback you would like us to know.</p>
+          </div>
+        </div>
+        <label class="visually-hidden" for="comments">Any Other Comments:</label>
+        <textarea id="comments" name="comments" rows="5" placeholder="Write your comments here..."></textarea>
+      </section>
+
+      <div class="form-actions">
+        <button class="button button--primary" id="submitButton" type="submit">Submit Feedback</button>
+        <button class="button button--secondary" id="resetButton" type="button">Reset Form</button>
+      </div>
+      <p class="required-note"><span aria-hidden="true">*</span> Required fields</p>
+    </form>
+  </main>
+
+  <footer class="page-footer">Excel Engineering College <span aria-hidden="true">&middot;</span> Komarapalayam - 637303</footer>
+</body>
+</html>
